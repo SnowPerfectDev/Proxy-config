@@ -12,5 +12,5 @@ Este script simplifica a configuração do Proxychains e do serviço Tor no Term
 ```
 * Inicie o serviço Tor com este comando no Termux:
 ```bash 
-  bash -c "$(curl -fsSL https://raw.githubusercontent.com/SnowPerfectDev/Tor)"
+  bash -c "$(curl -fsSL https://raw.githubusercontent.com/SnowPerfectDev/Proxy-config/main/StartTor.sh)"
 ```
