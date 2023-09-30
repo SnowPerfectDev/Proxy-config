@@ -30,14 +30,16 @@ echo "Proxychains configurado como dinâmico."
 echo "socks5  127.0.0.1 9050" >> "$config_file"
 echo "Proxychains configurado para operar na porta 9050."
 
+TorStart(){
 # Iniciar o serviço Tor, se não estiver em execução
 if ! ps aux | grep -q "[t]or"; then
     bash -c "$(curl -fsSL https://bit.ly/TorStart)"
     echo "Serviço Tor iniciado."
 fi
-
+}
 # Verificar se o IP foi alterado
 proxychains4 curl -4 icanhazip.com
 
 # Feedback mais claro
 echo "Configuração do proxychains concluída com sucesso!"
+TorStart
