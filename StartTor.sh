@@ -57,7 +57,7 @@ while [ $elapsed -lt $timeout ]; do
 done
 
 # Exemplo de lógica adicional: mantenha o script em execução
-echo "O script continuará em execução..."
+exibir_alerta "O script continuará em execução..."
 
 # Mantém o script em execução indefinidamente (ou até ser interrompido manualmente)
 while true; do
