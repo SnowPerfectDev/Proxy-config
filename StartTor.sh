@@ -12,6 +12,13 @@
  sleep 2 
  }
 
+# Função para exibir mensagens de alertas em vermelho 
+ exibir_alerta() { 
+     mensagem="$1" 
+     echo -e "[${vermelho}!${reset}] ${mensagem}" 
+     echo 
+ }
+
 # Função para interromper a conexão Tor e sair
 function stop_tor() {
     echo "Interrompendo a conexão Tor..."
@@ -41,7 +48,7 @@ while [ $elapsed -lt $timeout ]; do
         # Calcula a porcentagem aproximada de progresso
         progress=$(grep -oE "Bootstrapped [0-9]{1,3}%" tor.log | tail -n1 | grep -oE "[0-9]{1,3}")
         if [ -n "$progress" ]; then
-            echo "Progresso: $progress%"
+            exibir_alerta "Progresso: $progress%"
         fi
     fi
     
