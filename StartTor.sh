@@ -1,5 +1,17 @@
 #!/bin/bash
 
+# Cores ANSI 
+ vermelho="\033[1;31m" 
+ verde="\033[1;32m" 
+ reset="\033[0m"
+
+# Função para exibir mensagens de sucesso em verde 
+ exibir_sucesso() { 
+     mensagem="$1" 
+     echo -e "${reset}[${verde}+${reset}] ${mensagem}" 
+ sleep 2 
+ }
+
 # Função para interromper a conexão Tor e sair
 function stop_tor() {
     echo "Interrompendo a conexão Tor..."
@@ -23,7 +35,7 @@ elapsed=0
 while [ $elapsed -lt $timeout ]; do
     # Verifica se o Tor já está conectado no log
     if grep -q "Bootstrapped 100%" tor.log; then
-        echo "Conexão Tor estabelecida (100%)"
+        exibir_sucesso "Conexão Tor estabelecida (100%)"
         break
     else
         # Calcula a porcentagem aproximada de progresso
