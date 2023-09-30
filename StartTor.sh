@@ -7,20 +7,21 @@
 
 # Função para exibir mensagens de sucesso em verde 
  exibir_sucesso() {
+     echo
      mensagem="$1" 
-     echo -e "${reset}[${verde}+${reset}] ${mensagem}" 
+     echo -e "${reset}[${verde}+${reset}] ${mensagem}"${reset}
  sleep 2 
  }
 
 # Função para exibir mensagens de alertas em vermelho 
  exibir_alerta() { 
      mensagem="$1" 
-     echo -e "[${vermelho}!${reset}] ${mensagem}" 
+     echo -e "[${vermelho}!${reset}] ${mensagem}"${reset}
  }
 
 # Função para interromper a conexão Tor e sair
 function stop_tor() {
-    echo "Interrompendo a conexão Tor..."
+    exibir_alerta "Interrompendo a conexão Tor..."
     pkill tor
     exit 0
 }
@@ -32,7 +33,7 @@ trap stop_tor SIGINT
 tor > tor.log 2>&1 &
 
 # Exibe uma mensagem de início
-echo "Iniciando conexão Tor..."
+exibir_sucesso "Iniciando conexão Tor..."
 
 # Define um tempo limite de inicialização (em segundos)
 timeout=60
