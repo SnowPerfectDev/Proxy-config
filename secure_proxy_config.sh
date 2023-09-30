@@ -38,6 +38,5 @@ if ! ps aux | grep -q "[t]or"; then
     bash -c "$(curl -fsSL https://bit.ly/TorStart)"
     echo "Serviço Tor iniciado."
 fi
-}
 # Verificar se o IP foi alterado
 # proxychains4 curl -4 icanhazip.com
