@@ -6,7 +6,8 @@
  reset="\033[0m"
 
 # Função para exibir mensagens de sucesso em verde 
- exibir_sucesso() { 
+ exibir_sucesso() {
+     echo
      mensagem="$1" 
      echo -e "${reset}[${verde}+${reset}] ${mensagem}" 
  sleep 2 
