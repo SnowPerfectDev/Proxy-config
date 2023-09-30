@@ -38,7 +38,7 @@ if ! ps aux | grep -q "[t]or"; then
 fi
 }
 # Verificar se o IP foi alterado
-proxychains4 curl -4 icanhazip.com
+# proxychains4 curl -4 icanhazip.com
 
 # Feedback mais claro
 echo "Configuração do proxychains concluída com sucesso!"
