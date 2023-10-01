@@ -32,6 +32,7 @@ NORM() {
 # Função para interromper a conexão Tor e sair
 function stop_tor() {
     exibir_alerta "Interrompendo a conexão Tor..."
+    NORM
     pkill tor
     exit 0
 }
