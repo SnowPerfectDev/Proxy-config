@@ -5,6 +5,16 @@
  verde="\033[1;32m" 
  reset="\033[0m"
 
+# Função para ocultar o cursor na tela
+HIDECURSOR() {
+    echo -en "\033[?25l"
+}
+HIDECURSOR
+# Função para restaurar as configurações normais do terminal, incluindo a visibilidade do cursor
+NORM() {
+    echo -en "\033[?12l\033[?25h"
+}
+
 # Função para exibir mensagens de sucesso em verde 
  exibir_sucesso() {
      echo
@@ -63,3 +73,4 @@ exibir_alerta "O script continuará em execução..."
 while true; do
     sleep 1
 done
+NORM
