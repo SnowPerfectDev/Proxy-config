@@ -4,7 +4,7 @@
  vermelho="\033[1;31m" 
  verde="\033[1;32m" 
  reset="\033[0m"
-
+clear
 # Função para ocultar o cursor na tela
 HIDECURSOR() {
     echo -en "\033[?25l"
